@@ -1,4 +1,4 @@
-FROM apache/nifi:1.12.1 
+FROM apache/nifi:1.11.4
 
 ENV NIFI_BASE_DIR=/opt/nifi
 ENV NIFI_HOME ${NIFI_BASE_DIR}/nifi-current
@@ -6,8 +6,10 @@ ENV NIFI_TOOLKIT_HOME ${NIFI_BASE_DIR}/nifi-toolkit-current
 
 ENV NIFI_PID_DIR=${NIFI_HOME}/run
 ENV NIFI_LOG_DIR=${NIFI_HOME}/logs
-
+#COPY jdbc/ ${NIFI_HOME}
+COPY nifi-flow-audit.h2.db ${NIFI_HOME}/database_repository/nifi-flow-audit.h2.db
 COPY flow.xml.gz ${NIFI_HOME}/conf/
+COPY state/ ${NIFI_HOME}/state/
 COPY jdbc/ ${NIFI_HOME}/jdbc/
 
 USER root
