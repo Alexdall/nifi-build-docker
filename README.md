@@ -5,7 +5,7 @@ Files to build a docker image with Apache NIFI
 # docker-nifi
 
 ## Important Info
-The jdbc directory will be copied to the container. In this example we have an oracle jdbc. 
+The jdbc directory will be copied to the container. In this example we have an oracle, sqlserver and postgresql jdbc. 
 ```
 ./flow.xml.gz
 ./jdbc/*
@@ -24,3 +24,5 @@ $ docker run --name --rm nifi \
   -d \
   -e NIFI_WEB_HTTP_PORT='9090' \
   nifi-APP/alexdall:latest
+```
+## Or just run build_run.sh
