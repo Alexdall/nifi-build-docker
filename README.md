@@ -4,11 +4,8 @@ Files to build a docker image with Apache NIFI
 
 # docker-nifi
 
-## Intro 
-This is a base docker which runs a determinated workflow in the same directory of the build. Copying it to the build image and starting as needed. 
-
 ## Important Info
-The flow and other files will be copied to the container. In this example we have a jdbc for oracle along side. 
+The jdbc directory will be copied to the container. In this example we have an oracle jdbc. 
 ```
 ./flow.xml.gz
 ./jdbc/*
